@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chính sách riêng tư — FinTrack</title>
+<style>
+  :root {
+    --nen: #ffffff; --chu: #1e293b; --nhat: #64748b;
+    --vien: #e2e8f0; --nhan: #0284c7; --hop: #f8fafc;
+    --canh: #92400e; --canh-nen: #fffbeb; --canh-vien: #fde68a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --nen: #0f172a; --chu: #e2e8f0; --nhat: #94a3b8;
+      --vien: #1e293b; --nhan: #38bdf8; --hop: #1e293b;
+      --canh: #fcd34d; --canh-nen: #27200a; --canh-vien: #78350f;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 2.5rem 1.25rem 4rem;
+    background: var(--nen); color: var(--chu);
+    font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 46rem; margin: 0 auto; }
+  h1 { font-size: 1.7rem; margin: 0 0 .35rem; }
+  h2 { font-size: 1.15rem; margin: 2.25rem 0 .6rem; padding-top: 1.25rem; border-top: 1px solid var(--vien); }
+  h2:first-of-type { border-top: 0; padding-top: 0; }
+  .ngay { color: var(--nhat); font-size: .875rem; margin-bottom: 2rem; }
+  ul { padding-left: 1.25rem; }
+  li { margin: .35rem 0; }
+  a { color: var(--nhan); }
+  .hop { background: var(--hop); border: 1px solid var(--vien); border-radius: .5rem; padding: .85rem 1.1rem; margin: 1rem 0; }
+  .hop strong { display: block; margin-bottom: .3rem; }
+  .canh { background: var(--canh-nen); border: 1px solid var(--canh-vien); color: var(--canh); border-radius: .5rem; padding: .85rem 1.1rem; margin: 1rem 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .925rem; }
+  th, td { text-align: left; padding: .5rem .6rem; border-bottom: 1px solid var(--vien); vertical-align: top; }
+  th { color: var(--nhat); font-weight: 600; font-size: .8rem; text-transform: uppercase; letter-spacing: .02em; }
+  code { background: var(--hop); padding: .1rem .35rem; border-radius: .25rem; font-size: .9em; word-break: break-all; }
+  .en { margin-top: 4rem; padding-top: 2rem; border-top: 3px double var(--vien); }
+  footer { margin-top: 3rem; color: var(--nhat); font-size: .85rem; }
+
+  /* Chon ngon ngu — nguoi duyet store thuong doc tieng Anh, va ho khong nhat
+     thiet cuon xuong het trang de tim. Hai lien ket neo, khong dung JavaScript:
+     mot so noi mo trang nay trong khung xem han che, co JS chua chac chay. */
+  .ngonngu {
+    display: flex; gap: .5rem; align-items: center;
+    margin-bottom: 1.75rem; padding-bottom: 1rem;
+    border-bottom: 1px solid var(--vien);
+    font-size: .875rem;
+  }
+  .ngonngu a {
+    text-decoration: none; padding: .25rem .7rem;
+    border: 1px solid var(--vien); border-radius: 999px;
+    color: var(--nhat);
+  }
+  .ngonngu a:hover { border-color: var(--nhan); color: var(--nhan); }
+  .ngonngu .dang { background: var(--nhan); border-color: var(--nhan); color: #fff; }
+</style>
+</head>
+<body>
+<main>
+
+<nav class="ngonngu">
+  <a href="#vi" class="dang" hreflang="vi">Tiếng Việt</a>
+  <a href="#en" hreflang="en">English</a>
+</nav>
+
+<h1 id="vi">Chính sách riêng tư — FinTrack</h1>
+<p class="ngay">Cập nhật: 07/09/2026</p>
+
+<p>FinTrack là ứng dụng quản lý tài chính cá nhân chạy trên máy của bạn. Trang này nói rõ ứng dụng lưu những gì, gửi đi đâu, và bạn xoá chúng bằng cách nào.</p>
+
+<div class="hop">
+  <strong>Tóm tắt</strong>
+  FinTrack <strong>không có tài khoản đăng nhập, không có máy chủ, không đồng bộ lên đám mây</strong>. Toàn bộ dữ liệu tài chính của bạn nằm trong một tệp trên máy bạn và không được gửi đi đâu cả. Nhà phát triển không nhận được và không có cách nào xem được dữ liệu đó. Không quảng cáo, không công cụ đo lường hành vi, không bán hay chia sẻ dữ liệu cho bất kỳ ai.
+</div>
+
+<h2>1. Ứng dụng lưu những gì, và lưu ở đâu</h2>
+<table>
+  <tr><th>Loại</th><th>Nội dung</th></tr>
+  <tr>
+    <td>Dữ liệu tài chính bạn nhập</td>
+    <td>Giao dịch thu chi, tài khoản ngân hàng và ví, danh mục, chứng chỉ quỹ, cổ phiếu, sổ tiết kiệm</td>
+  </tr>
+  <tr>
+    <td>Dữ liệu thị trường</td>
+    <td>Giá cổ phiếu và NAV chứng chỉ quỹ tải về từ các nguồn công khai, dùng để định giá danh mục của bạn</td>
+  </tr>
+  <tr>
+    <td>Tuỳ chọn hiển thị</td>
+    <td>Ngôn ngữ, giao diện sáng/tối, các lựa chọn lọc và sắp xếp bạn đã đặt</td>
+  </tr>
+</table>
+
+<p>Tất cả nằm trong <strong>một tệp cơ sở dữ liệu duy nhất</strong> trong thư mục dữ liệu của ứng dụng trên máy bạn:</p>
+<p><code>%APPDATA%\FinTrack\fintrack.db</code><br>
+<span class="ngay">(thường là <code>C:\Users\&lt;tên đăng nhập&gt;\AppData\Roaming\FinTrack\</code>)</span></p>
+
+<p>Ứng dụng <strong>không</strong> có tài khoản, không hỏi mật khẩu, không hỏi địa chỉ email. Ứng dụng <strong>không</strong> thu thập: vị trí, danh bạ, ảnh, lịch sử duyệt web, mã định danh thiết bị quảng cáo, hay bất kỳ số liệu sử dụng nào.</p>
+
+<h2>2. Không có máy chủ nào của chúng tôi</h2>
+<p>Bản FinTrack này không có bước đăng ký hay đăng nhập, và không có chức năng đồng bộ. <strong>Không tồn tại một bản sao dữ liệu nào của bạn trên máy chủ của chúng tôi</strong>, vì chúng tôi không vận hành máy chủ nào nhận dữ liệu người dùng.</p>
+<p>Hệ quả trực tiếp: chúng tôi không xem được, không sao chép được, không khôi phục hộ và cũng không xoá hộ dữ liệu của bạn. Kể cả khi bạn yêu cầu, chúng tôi cũng không có gì để lấy ra — mọi việc đó nằm hoàn toàn trong tay bạn, ngay trên máy bạn.</p>
+<p><strong>Không có việc chuyển dữ liệu ra nước ngoài</strong>, vì dữ liệu không rời khỏi máy bạn.</p>
+
+<h2>3. Ứng dụng gọi ra ngoài những đâu</h2>
+<p>Ứng dụng chỉ kết nối internet khi bạn <strong>chủ động bấm cập nhật giá cổ phiếu hoặc nạp NAV quỹ</strong>. Khi đó nó gọi tới:</p>
+<table>
+  <tr><th>Bên nhận</th><th>Nhận được gì</th></tr>
+  <tr>
+    <td>Vietcap, SSI iBoard, cophieu68<br><span class="ngay">(giá cổ phiếu và chỉ số thị trường)</span></td>
+    <td><strong>Chỉ mã cổ phiếu</strong> (ví dụ <code>ACB</code>, <code>HPG</code>)</td>
+  </tr>
+  <tr>
+    <td>Fmarket<br><span class="ngay">(NAV chứng chỉ quỹ)</span></td>
+    <td><strong>Chỉ mã quỹ</strong> (ví dụ <code>VESAF</code>)</td>
+  </tr>
+</table>
+<p>Không kèm tên, không kèm email, không kèm số lượng bạn đang nắm giữ, không kèm bất cứ thứ gì nhận dạng được bạn. Cả bốn nguồn đều là dịch vụ trong nước.</p>
+<p>Như với mọi lần mở một trang web, máy chủ của các nguồn đó nhìn thấy <strong>địa chỉ IP</strong> của bạn — đó là điều không tránh được với bất kỳ kết nối internet nào, và bản thân chúng tôi không nhận được thông tin đó.</p>
+<p>Đó là <strong>toàn bộ</strong> lưu lượng mạng của ứng dụng. Không có mạng quảng cáo, không có công cụ đo lường, không có dịch vụ báo lỗi tự động, và ứng dụng cũng không tự gọi về để kiểm tra bản cập nhật.</p>
+<p>Nếu bạn không dùng chức năng cập nhật giá, ứng dụng <strong>không mở một kết nối nào</strong> — dùng được hoàn toàn khi máy ngoại tuyến.</p>
+
+<h2>4. Sao lưu ra tệp — bạn tự chọn nơi để</h2>
+<p>Ứng dụng có chức năng <strong>Sao lưu / Khôi phục</strong>: nó tạo một bản sao đầy đủ dữ liệu của bạn thành một tệp, và <strong>bạn chọn thư mục lưu</strong>. Ứng dụng không tự gửi tệp đó đi đâu.</p>
+
+<div class="canh">
+  <strong>Hai điều cần biết về tệp sao lưu</strong>
+  <p style="margin:.4rem 0 0">1. Tệp sao lưu <strong>không được mã hoá</strong>. Ai mở được tệp là đọc được toàn bộ số liệu trong đó. Hãy giữ nó cẩn thận như giữ một tệp sao kê ngân hàng, và đừng gửi cho người khác.</p>
+  <p style="margin:.4rem 0 0">2. Nếu bạn chọn lưu vào một thư mục của <strong>OneDrive, Google Drive, iCloud</strong> hay dịch vụ tương tự, chính dịch vụ đó sẽ tải bản sao lên tài khoản đám mây <strong>của bạn</strong>. Đó là lựa chọn của bạn và chịu chính sách riêng tư của nhà cung cấp đó, không phải của chúng tôi.</p>
+</div>
+
+<h2 id="xoa-tai-khoan">5. Xoá dữ liệu — hoàn toàn trong tay bạn</h2>
+<p>Không có tài khoản nào để xoá, không có yêu cầu nào phải gửi đi, không phải chờ ai duyệt. Dữ liệu là của bạn và nằm trên máy bạn.</p>
+<p><strong>Cách xoá sạch:</strong> đóng ứng dụng, rồi xoá thư mục</p>
+<p><code>%APPDATA%\FinTrack\</code></p>
+<p>Thư mục đó chứa tệp cơ sở dữ liệu và các bản chụp mà ứng dụng tự giữ lại trước mỗi lần khôi phục. Xoá cả thư mục là không còn gì.</p>
+
+<div class="canh">
+  <strong>Gỡ ứng dụng chưa chắc đã xoá dữ liệu</strong>
+  Trình gỡ cài đặt thường <em>giữ lại</em> thư mục dữ liệu người dùng để phòng khi bạn cài lại. Muốn không còn dấu vết nào, hãy xoá thư mục trên <strong>bằng tay sau khi gỡ ứng dụng</strong>.
+</div>
+
+<p>Ngoài ra, những <strong>tệp sao lưu bạn đã tự lưu ra chỗ khác</strong> (mục 4) thì bạn tự xoá — chúng tôi không biết chúng nằm ở đâu.</p>
+<p>Nếu muốn giữ lại số liệu trước khi xoá, hãy dùng chức năng <strong>Xuất Excel</strong> hoặc <strong>Sao lưu ra tệp</strong> trong ứng dụng.</p>
+
+<h2>6. Chúng tôi giữ dữ liệu của bạn bao lâu</h2>
+<p><strong>Không ngày nào</strong> — vì chúng tôi chưa bao giờ nhận được nó. Không có bản sao lưu nào ở phía chúng tôi để mà nói tới thời hạn. Dữ liệu ở lại trên máy bạn cho tới khi chính bạn xoá.</p>
+
+<h2>7. Trẻ em</h2>
+<p>FinTrack không hướng tới trẻ em dưới 13 tuổi và không cố ý thu thập dữ liệu của trẻ em.</p>
+
+<h2>8. Thay đổi chính sách</h2>
+<p>Nếu chính sách này thay đổi, ngày cập nhật ở đầu trang sẽ đổi theo. Nếu một bản cập nhật ứng dụng về sau bắt đầu gửi dữ liệu đi đâu đó, điều đó sẽ được nói rõ <strong>trong ứng dụng trước khi bật</strong>, và phải do bạn tự đồng ý.</p>
+
+<h2>9. Liên hệ</h2>
+<p>Thắc mắc về quyền riêng tư, hoặc muốn báo rằng ứng dụng đang làm khác với những gì trang này nói, gửi tới: <a href="mailto:fintrack@bunnyartgallery.com">fintrack@bunnyartgallery.com</a></p>
+<p>Chúng tôi phản hồi trong vòng 5 ngày làm việc kể từ khi nhận được thư.</p>
+
+<h2>10. Quyền của bạn</h2>
+<p>Vì dữ liệu nằm trên máy bạn chứ không nằm ở chỗ chúng tôi, bạn thực hiện mọi quyền <strong>trực tiếp, không cần xin phép ai</strong>:</p>
+<ul>
+  <li><strong>Xem</strong> — mọi số liệu đều hiện ngay trong ứng dụng.</li>
+  <li><strong>Sửa</strong> — sửa thẳng trong ứng dụng.</li>
+  <li><strong>Lấy về</strong> — <em>Xuất Excel</em> để lấy bản đọc được, hoặc <em>Sao lưu ra tệp</em> để lấy bản đầy đủ.</li>
+  <li><strong>Xoá</strong> — mục 5.</li>
+</ul>
+<p><strong>Về sự đồng ý:</strong> không có bước nào bạn giao dữ liệu cho chúng tôi, nên cũng không có sự đồng ý nào để rút lại. Muốn ứng dụng không kết nối ra ngoài chút nào thì đơn giản là không dùng chức năng cập nhật giá (mục 3).</p>
+
+<h2>11. Chúng tôi bảo vệ dữ liệu thế nào</h2>
+<p>Điều quan trọng nhất, và bạn nên biết rõ: <strong>tệp cơ sở dữ liệu trên máy bạn không được mã hoá riêng.</strong> Nó được bảo vệ bằng chính quyền truy cập tài khoản Windows của bạn. Nếu máy dùng chung với người khác, hãy dùng một tài khoản Windows riêng và đặt mật khẩu cho nó.</p>
+<ul>
+  <li><strong>Không có mật khẩu nào của bạn nằm trong ứng dụng</strong>, vì ứng dụng không có tài khoản đăng nhập.</li>
+  <li><strong>Đường truyền</strong> — các lần gọi tới nguồn giá (mục 3) đều đi qua HTTPS.</li>
+  <li><strong>Bản cài đặt phát hành không chứa khoá truy cập máy chủ nào</strong>, vì không có máy chủ nào để truy cập.</li>
+</ul>
+
+<!-- ==================================================================== -->
+
+<div class="en" lang="en">
+<nav class="ngonngu">
+  <a href="#vi" hreflang="vi">Tiếng Việt</a>
+  <a href="#en" class="dang" hreflang="en">English</a>
+</nav>
+
+<h1 id="en">Privacy Policy — FinTrack</h1>
+<p class="ngay">Last updated: 7 September 2026</p>
+
+<p>FinTrack is a personal finance app that runs on your own computer. This page states exactly what it stores, where anything goes, and how you delete it.</p>
+
+<div class="hop">
+  <strong>In short</strong>
+  FinTrack has <strong>no user accounts, no server, and no cloud sync</strong>. All of your financial data lives in a single file on your own machine and is not sent anywhere. The developer never receives it and has no way to see it. No ads, no analytics, no selling or sharing of data with anyone.
+</div>
+
+<h2>1. What the app stores, and where</h2>
+<ul>
+  <li><strong>Financial data you enter</strong> — transactions, bank and wallet accounts, categories, mutual funds, stocks, savings books.</li>
+  <li><strong>Market data</strong> — stock prices and fund NAVs fetched from public sources, used to value your portfolio.</li>
+  <li><strong>Display preferences</strong> — language, light/dark theme, the filters and sorting you set.</li>
+</ul>
+<p>All of it sits in <strong>one database file</strong> in the app's data folder on your machine:</p>
+<p><code>%APPDATA%\FinTrack\fintrack.db</code><br>
+<span class="ngay">(typically <code>C:\Users\&lt;your login&gt;\AppData\Roaming\FinTrack\</code>)</span></p>
+<p>The app has no accounts, asks for no password and no email address. It does <strong>not</strong> collect location, contacts, photos, browsing history, advertising identifiers, or any usage telemetry.</p>
+
+<h2>2. There is no server of ours</h2>
+<p>This build of FinTrack has no sign-up, no sign-in and no sync. <strong>No copy of your data exists on any server of ours</strong>, because we run no server that receives user data.</p>
+<p>The direct consequence: we cannot view, copy, restore or delete your data for you. Even if you asked, there would be nothing for us to retrieve — all of that is entirely in your hands, on your own machine.</p>
+<p><strong>No data is transferred abroad</strong>, because no data leaves your machine.</p>
+
+<h2>3. Who the app talks to</h2>
+<p>The app connects to the internet only when you <strong>deliberately press update for stock prices or fund NAVs</strong>. It then calls:</p>
+<ul>
+  <li><strong>Vietcap, SSI iBoard, cophieu68</strong> (stock prices and market indices) — they receive <strong>ticker symbols only</strong> (e.g. <code>ACB</code>, <code>HPG</code>).</li>
+  <li><strong>Fmarket</strong> (fund NAVs) — receives <strong>fund codes only</strong> (e.g. <code>VESAF</code>).</li>
+</ul>
+<p>No name, no email, no holding sizes, nothing that identifies you. All four are Vietnamese services.</p>
+<p>As with opening any web page, those servers see your <strong>IP address</strong> — unavoidable for any internet connection, and we ourselves receive none of that information.</p>
+<p>That is the <strong>entirety</strong> of the app's network traffic. No ad networks, no measurement tools, no automatic crash reporting, and the app does not phone home to check for updates.</p>
+<p>If you never use the price update feature, the app <strong>opens no connection at all</strong> — it works fully offline.</p>
+
+<h2>4. Backup files — you choose where they go</h2>
+<p>The app has a <strong>Backup / Restore</strong> feature: it writes a complete copy of your data to a file, and <strong>you pick the folder</strong>. The app never sends that file anywhere itself.</p>
+<div class="canh">
+  <strong>Two things to know about backup files</strong>
+  <p style="margin:.4rem 0 0">1. A backup file is <strong>not encrypted</strong>. Anyone who can open the file can read everything in it. Treat it like a bank statement, and do not send it to other people.</p>
+  <p style="margin:.4rem 0 0">2. If you save it into a <strong>OneDrive, Google Drive or iCloud</strong> folder, that service will upload the copy to <strong>your own</strong> cloud account. That is your choice and is governed by that provider's privacy policy, not ours.</p>
+</div>
+
+<h2 id="delete-account">5. Deleting your data — entirely in your hands</h2>
+<p>There is no account to delete, no request to send, and no approval to wait for. The data is yours and it is on your machine.</p>
+<p><strong>To erase everything:</strong> close the app, then delete the folder</p>
+<p><code>%APPDATA%\FinTrack\</code></p>
+<p>That folder holds the database file and the snapshots the app keeps before each restore. Deleting the folder leaves nothing behind.</p>
+<div class="canh">
+  <strong>Uninstalling does not necessarily delete your data</strong>
+  Uninstallers commonly <em>keep</em> the user data folder in case you reinstall. To leave no trace, delete the folder above <strong>by hand after uninstalling</strong>.
+</div>
+<p>Any <strong>backup files you saved elsewhere</strong> (section 4) are yours to delete — we have no idea where they are.</p>
+<p>If you want to keep your figures first, use <strong>Export to Excel</strong> or <strong>Backup to file</strong> in the app.</p>
+
+<h2>6. How long we keep your data</h2>
+<p><strong>Not for a single day</strong> — we never receive it. There is no backup on our side for a retention period to apply to. Your data stays on your machine until you delete it.</p>
+
+<h2>7. Children</h2>
+<p>FinTrack is not directed at children under 13 and does not knowingly collect their data.</p>
+
+<h2>8. Changes</h2>
+<p>If this policy changes, the date at the top changes with it. If some future version of the app were to start sending data anywhere, that would be stated <strong>in the app before it is enabled</strong>, and would require your consent.</p>
+
+<h2>9. Contact</h2>
+<p>For privacy questions, or to report that the app behaves differently from what this page says, write to: <a href="mailto:fintrack@bunnyartgallery.com">fintrack@bunnyartgallery.com</a></p>
+<p>We reply within 5 working days of receiving your message.</p>
+
+<h2>10. Your rights</h2>
+<p>Because your data sits on your machine and not with us, you exercise every right <strong>directly, without asking anyone</strong>:</p>
+<ul>
+  <li><strong>Access</strong> — everything is visible in the app.</li>
+  <li><strong>Correct</strong> — edit it directly in the app.</li>
+  <li><strong>Export</strong> — <em>Export to Excel</em> for a readable copy, or <em>Backup to file</em> for a complete one.</li>
+  <li><strong>Delete</strong> — section 5.</li>
+</ul>
+<p><strong>On consent:</strong> there is no point at which you hand data to us, so there is no consent to withdraw. If you want the app to make no outbound connection at all, simply do not use the price update feature (section 3).</p>
+
+<h2>11. How your data is protected</h2>
+<p>The most important point, and you should know it plainly: <strong>the database file on your machine is not separately encrypted.</strong> It is protected by your Windows account permissions. If you share the computer, use a separate, password-protected Windows account.</p>
+<ul>
+  <li><strong>No password of yours is stored in the app</strong>, because the app has no login.</li>
+  <li><strong>In transit</strong> — the price source calls in section 3 all use HTTPS.</li>
+  <li><strong>The released installer contains no server credentials</strong>, because there is no server to reach.</li>
+</ul>
+</div>
+
+<footer>
+  <p>FinTrack — ứng dụng quản lý tài chính cá nhân, do <strong>Đỗ Trung Dũng</strong> phát triển và phát hành.<br>
+  <em>A personal finance app, developed and published by <strong>Đỗ Trung Dũng</strong>.</em></p>
+  <p>Liên hệ về quyền riêng tư / Privacy contact: <a href="mailto:fintrack@bunnyartgallery.com">fintrack@bunnyartgallery.com</a></p>
+</footer>
+
+</main>
+</body>
+</html>
