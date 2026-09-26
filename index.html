@@ -68,7 +68,7 @@
 </nav>
 
 <h1 id="vi">Chính sách riêng tư — FinTrack</h1>
-<p class="ngay">Cập nhật: 07/09/2026</p>
+<p class="ngay">Cập nhật: 26/09/2026</p>
 
 <p>FinTrack là ứng dụng quản lý tài chính cá nhân chạy trên máy của bạn. Trang này nói rõ ứng dụng lưu những gì, gửi đi đâu, và bạn xoá chúng bằng cách nào.</p>
 
@@ -86,17 +86,18 @@
   </tr>
   <tr>
     <td>Dữ liệu thị trường</td>
-    <td>Giá cổ phiếu và NAV chứng chỉ quỹ tải về từ các nguồn công khai, dùng để định giá danh mục của bạn</td>
+    <td>Giá cổ phiếu và NAV chứng chỉ quỹ tải về từ các nguồn công khai, dùng để định giá danh mục của bạn; lịch sử VN-Index nếu bạn bấm tải, dùng để so sánh với tài khoản chứng chỉ quỹ và cổ phiếu</td>
   </tr>
   <tr>
     <td>Tuỳ chọn hiển thị</td>
-    <td>Ngôn ngữ, giao diện sáng/tối, các lựa chọn lọc và sắp xếp bạn đã đặt</td>
+    <td>Ngôn ngữ, giao diện sáng/tối, tài khoản đang chọn ở mục Chứng chỉ quỹ và Cổ phiếu, các nguồn tài sản bạn tick chọn ở trang Tổng hợp</td>
   </tr>
 </table>
 
-<p>Tất cả nằm trong <strong>một tệp cơ sở dữ liệu duy nhất</strong> trong thư mục dữ liệu của ứng dụng trên máy bạn:</p>
-<p><code>%APPDATA%\FinTrack\fintrack.db</code><br>
+<p>Tất cả nằm trong <strong>thư mục dữ liệu của ứng dụng</strong> trên máy bạn:</p>
+<p><code>%APPDATA%\FinTrack\</code><br>
 <span class="ngay">(thường là <code>C:\Users\&lt;tên đăng nhập&gt;\AppData\Roaming\FinTrack\</code>)</span></p>
+<p>Dữ liệu tài chính, dữ liệu thị trường và lựa chọn ở trang Tổng hợp nằm trong <strong>một tệp cơ sở dữ liệu duy nhất</strong>, <code>fintrack.db</code>. Ngôn ngữ, giao diện sáng/tối và tài khoản đang chọn nằm trong bộ nhớ cục bộ của ứng dụng (thư mục con <code>Local Storage</code>), cũng trong thư mục đó.</p>
 
 <p>Ứng dụng <strong>không</strong> có tài khoản, không hỏi mật khẩu, không hỏi địa chỉ email. Ứng dụng <strong>không</strong> thu thập: vị trí, danh bạ, ảnh, lịch sử duyệt web, mã định danh thiết bị quảng cáo, hay bất kỳ số liệu sử dụng nào.</p>
 
@@ -106,22 +107,36 @@
 <p><strong>Không có việc chuyển dữ liệu ra nước ngoài</strong>, vì dữ liệu không rời khỏi máy bạn.</p>
 
 <h2>3. Ứng dụng gọi ra ngoài những đâu</h2>
-<p>Ứng dụng chỉ kết nối internet khi bạn <strong>chủ động bấm cập nhật giá cổ phiếu hoặc nạp NAV quỹ</strong>. Khi đó nó gọi tới:</p>
+<p>Ứng dụng chỉ kết nối internet trong <strong>ba trường hợp</strong>:</p>
+<ul>
+  <li>Khi bạn <strong>chủ động bấm</strong> cập nhật giá cổ phiếu, bổ sung giá ngày cho TSLN, nạp NAV quỹ, lấy tên công ty từ web (nút <em>Lấy từ web</em> khi thêm mã cổ phiếu) hoặc tải VN-Index để so sánh (biểu đồ ở tab Tổng quan của chứng chỉ quỹ và cổ phiếu).</li>
+  <li>Khi bạn <strong>mở phần Tỷ giá</strong> (trong tab Công cụ &amp; Tiện ích).</li>
+  <li>Khi bạn <strong>mở tab Tổng quan</strong> của mục Chứng chỉ quỹ hoặc Cổ phiếu — cũng là tab hiện ra đầu tiên khi vào hai mục đó. Dải chỉ số thị trường ở đầu tab (VN-INDEX, HNX, UPCOM, VN30) <strong>tự tải</strong> ngay khi tab mở ra, rồi tự làm mới 5 phút một lần trong lúc tab còn mở; bấm vào dải để làm mới ngay.</li>
+</ul>
+<p>Khi đó nó gọi tới:</p>
 <table>
   <tr><th>Bên nhận</th><th>Nhận được gì</th></tr>
   <tr>
-    <td>Vietcap, SSI iBoard, cophieu68<br><span class="ngay">(giá cổ phiếu và chỉ số thị trường)</span></td>
-    <td><strong>Chỉ mã cổ phiếu</strong> (ví dụ <code>ACB</code>, <code>HPG</code>)</td>
+    <td>Vietcap, SSI iBoard, cophieu68<br><span class="ngay">(giá cổ phiếu, tên công ty và sàn niêm yết, chỉ số thị trường, lịch sử VN-Index)</span></td>
+    <td><strong>Chỉ mã cổ phiếu hoặc mã chỉ số</strong> (ví dụ <code>ACB</code>, <code>HPG</code>, <code>VNINDEX</code>); khi tải lịch sử VN-Index thì thêm khoảng ngày cần tải</td>
   </tr>
   <tr>
     <td>Fmarket<br><span class="ngay">(NAV chứng chỉ quỹ)</span></td>
     <td><strong>Chỉ mã quỹ</strong> (ví dụ <code>VESAF</code>)</td>
   </tr>
+  <tr>
+    <td>Vietcombank<br><span class="ngay">(tỷ giá ngoại tệ)</span></td>
+    <td><strong>Chỉ ngày cần tra</strong> (ví dụ <code>2026-09-17</code>)</td>
+  </tr>
+  <tr>
+    <td>CafeF<br><span class="ngay">(giá đóng cửa theo ngày, khi bấm bổ sung giá ngày)</span></td>
+    <td><strong>Chỉ mã cổ phiếu, sàn và tháng cần tra</strong> (ví dụ <code>PDR</code>, <code>HOSE</code>, tháng 6/2023)</td>
+  </tr>
 </table>
-<p>Không kèm tên, không kèm email, không kèm số lượng bạn đang nắm giữ, không kèm bất cứ thứ gì nhận dạng được bạn. Cả bốn nguồn đều là dịch vụ trong nước.</p>
+<p>Không kèm tên, không kèm email, không kèm số lượng bạn đang nắm giữ, không kèm bất cứ thứ gì nhận dạng được bạn. Cả sáu nguồn đều là dịch vụ trong nước.</p>
 <p>Như với mọi lần mở một trang web, máy chủ của các nguồn đó nhìn thấy <strong>địa chỉ IP</strong> của bạn — đó là điều không tránh được với bất kỳ kết nối internet nào, và bản thân chúng tôi không nhận được thông tin đó.</p>
 <p>Đó là <strong>toàn bộ</strong> lưu lượng mạng của ứng dụng. Không có mạng quảng cáo, không có công cụ đo lường, không có dịch vụ báo lỗi tự động, và ứng dụng cũng không tự gọi về để kiểm tra bản cập nhật.</p>
-<p>Nếu bạn không dùng chức năng cập nhật giá, ứng dụng <strong>không mở một kết nối nào</strong> — dùng được hoàn toàn khi máy ngoại tuyến.</p>
+<p>Ngoài ba trường hợp trên, ứng dụng <strong>không mở một kết nối nào</strong>. Khi máy ngoại tuyến, ứng dụng vẫn dùng được với dữ liệu trên máy; chỉ những phần lấy dữ liệu từ mạng (kể cả dải chỉ số ở tab Tổng quan) báo là không tải được. Máy tính trong tab Công cụ &amp; Tiện ích cũng chạy hoàn toàn trên máy.</p>
 
 <h2>4. Sao lưu ra tệp — bạn tự chọn nơi để</h2>
 <p>Ứng dụng có chức năng <strong>Sao lưu / Khôi phục</strong>: nó tạo một bản sao đầy đủ dữ liệu của bạn thành một tệp, và <strong>bạn chọn thư mục lưu</strong>. Ứng dụng không tự gửi tệp đó đi đâu.</p>
@@ -167,13 +182,13 @@
   <li><strong>Lấy về</strong> — <em>Xuất Excel</em> để lấy bản đọc được, hoặc <em>Sao lưu ra tệp</em> để lấy bản đầy đủ.</li>
   <li><strong>Xoá</strong> — mục 5.</li>
 </ul>
-<p><strong>Về sự đồng ý:</strong> không có bước nào bạn giao dữ liệu cho chúng tôi, nên cũng không có sự đồng ý nào để rút lại. Muốn ứng dụng không kết nối ra ngoài chút nào thì đơn giản là không dùng chức năng cập nhật giá (mục 3).</p>
+<p><strong>Về sự đồng ý:</strong> không có bước nào bạn giao dữ liệu cho chúng tôi, nên cũng không có sự đồng ý nào để rút lại. Muốn ứng dụng không kết nối ra ngoài chút nào thì không bấm các nút lấy dữ liệu, không mở phần Tỷ giá và không mở tab Tổng quan của Chứng chỉ quỹ hay Cổ phiếu — tab hiện ra đầu tiên khi vào hai mục đó (mục 3). Cách chắc chắn nhất là ngắt mạng: ứng dụng vẫn chạy với dữ liệu trên máy.</p>
 
 <h2>11. Chúng tôi bảo vệ dữ liệu thế nào</h2>
 <p>Điều quan trọng nhất, và bạn nên biết rõ: <strong>tệp cơ sở dữ liệu trên máy bạn không được mã hoá riêng.</strong> Nó được bảo vệ bằng chính quyền truy cập tài khoản Windows của bạn. Nếu máy dùng chung với người khác, hãy dùng một tài khoản Windows riêng và đặt mật khẩu cho nó.</p>
 <ul>
   <li><strong>Không có mật khẩu nào của bạn nằm trong ứng dụng</strong>, vì ứng dụng không có tài khoản đăng nhập.</li>
-  <li><strong>Đường truyền</strong> — các lần gọi tới nguồn giá (mục 3) đều đi qua HTTPS.</li>
+  <li><strong>Đường truyền</strong> — các lần gọi tới nguồn giá và tỷ giá (mục 3) đều đi qua HTTPS.</li>
   <li><strong>Bản cài đặt phát hành không chứa khoá truy cập máy chủ nào</strong>, vì không có máy chủ nào để truy cập.</li>
 </ul>
 
@@ -186,7 +201,7 @@
 </nav>
 
 <h1 id="en">Privacy Policy — FinTrack</h1>
-<p class="ngay">Last updated: 7 September 2026</p>
+<p class="ngay">Last updated: 26 September 2026</p>
 
 <p>FinTrack is a personal finance app that runs on your own computer. This page states exactly what it stores, where anything goes, and how you delete it.</p>
 
@@ -198,12 +213,13 @@
 <h2>1. What the app stores, and where</h2>
 <ul>
   <li><strong>Financial data you enter</strong> — transactions, bank and wallet accounts, categories, mutual funds, stocks, savings books.</li>
-  <li><strong>Market data</strong> — stock prices and fund NAVs fetched from public sources, used to value your portfolio.</li>
-  <li><strong>Display preferences</strong> — language, light/dark theme, the filters and sorting you set.</li>
+  <li><strong>Market data</strong> — stock prices and fund NAVs fetched from public sources, used to value your portfolio; VN-Index history if you choose to load it, used for comparison with your fund and stock accounts.</li>
+  <li><strong>Display preferences</strong> — language, light/dark theme, the account selected under Mutual Funds and Stocks, and the asset sources you tick on the consolidated portfolio page.</li>
 </ul>
-<p>All of it sits in <strong>one database file</strong> in the app's data folder on your machine:</p>
-<p><code>%APPDATA%\FinTrack\fintrack.db</code><br>
+<p>All of it sits in the <strong>app's data folder</strong> on your machine:</p>
+<p><code>%APPDATA%\FinTrack\</code><br>
 <span class="ngay">(typically <code>C:\Users\&lt;your login&gt;\AppData\Roaming\FinTrack\</code>)</span></p>
+<p>Your financial data, market data and your choices on the consolidated portfolio page are in <strong>one database file</strong>, <code>fintrack.db</code>. Language, light/dark theme and the selected accounts are kept in the app's local storage (the <code>Local Storage</code> subfolder) in that same folder.</p>
 <p>The app has no accounts, asks for no password and no email address. It does <strong>not</strong> collect location, contacts, photos, browsing history, advertising identifiers, or any usage telemetry.</p>
 
 <h2>2. There is no server of ours</h2>
@@ -212,15 +228,23 @@
 <p><strong>No data is transferred abroad</strong>, because no data leaves your machine.</p>
 
 <h2>3. Who the app talks to</h2>
-<p>The app connects to the internet only when you <strong>deliberately press update for stock prices or fund NAVs</strong>. It then calls:</p>
+<p>The app connects to the internet in <strong>three situations</strong> only:</p>
 <ul>
-  <li><strong>Vietcap, SSI iBoard, cophieu68</strong> (stock prices and market indices) — they receive <strong>ticker symbols only</strong> (e.g. <code>ACB</code>, <code>HPG</code>).</li>
-  <li><strong>Fmarket</strong> (fund NAVs) — receives <strong>fund codes only</strong> (e.g. <code>VESAF</code>).</li>
+  <li>When you <strong>deliberately press</strong> update for stock prices, fill daily prices for returns, update fund NAVs, fetch company details from the web (the <em>Fetch from web</em> button when adding a stock ticker), or load VN-Index for comparison (the chart on the fund and stock Overview tabs).</li>
+  <li>When you <strong>open the Exchange rates section</strong> (under Tools &amp; Utilities).</li>
+  <li>When you <strong>open the Overview tab</strong> of Mutual Funds or Stocks — which is also the tab shown first when you enter either section. The market index strip at the top of that tab (VN-INDEX, HNX, UPCOM, VN30) <strong>loads automatically</strong> as soon as the tab opens, then refreshes every 5 minutes while the tab stays open; click the strip to refresh it at once.</li>
 </ul>
-<p>No name, no email, no holding sizes, nothing that identifies you. All four are Vietnamese services.</p>
+<p>It then calls:</p>
+<ul>
+  <li><strong>Vietcap, SSI iBoard, cophieu68</strong> (stock prices, company name and exchange, market indices and VN-Index history) — they receive <strong>ticker or index symbols only</strong> (e.g. <code>ACB</code>, <code>HPG</code>, <code>VNINDEX</code>), plus the date range when loading VN-Index history.</li>
+  <li><strong>Fmarket</strong> (fund NAVs) — receives <strong>fund codes only</strong> (e.g. <code>VESAF</code>).</li>
+  <li><strong>Vietcombank</strong> (foreign exchange rates) — receives <strong>the date being looked up only</strong> (e.g. <code>2026-09-17</code>).</li>
+  <li><strong>CafeF</strong> (daily closing prices, when you press fill daily prices) — receives <strong>only the ticker, exchange and month being looked up</strong> (e.g. <code>PDR</code>, <code>HOSE</code>, June 2023).</li>
+</ul>
+<p>No name, no email, no holding sizes, nothing that identifies you. All six are Vietnamese services.</p>
 <p>As with opening any web page, those servers see your <strong>IP address</strong> — unavoidable for any internet connection, and we ourselves receive none of that information.</p>
 <p>That is the <strong>entirety</strong> of the app's network traffic. No ad networks, no measurement tools, no automatic crash reporting, and the app does not phone home to check for updates.</p>
-<p>If you never use the price update feature, the app <strong>opens no connection at all</strong> — it works fully offline.</p>
+<p>Outside these three situations the app <strong>opens no connection at all</strong>. When your computer is offline the app keeps working on the data on your machine; only the parts that fetch data from the internet (including the index strip on the Overview tab) report that they could not load. The calculator under Tools &amp; Utilities also runs entirely on your machine.</p>
 
 <h2>4. Backup files — you choose where they go</h2>
 <p>The app has a <strong>Backup / Restore</strong> feature: it writes a complete copy of your data to a file, and <strong>you pick the folder</strong>. The app never sends that file anywhere itself.</p>
@@ -263,13 +287,13 @@
   <li><strong>Export</strong> — <em>Export to Excel</em> for a readable copy, or <em>Backup to file</em> for a complete one.</li>
   <li><strong>Delete</strong> — section 5.</li>
 </ul>
-<p><strong>On consent:</strong> there is no point at which you hand data to us, so there is no consent to withdraw. If you want the app to make no outbound connection at all, simply do not use the price update feature (section 3).</p>
+<p><strong>On consent:</strong> there is no point at which you hand data to us, so there is no consent to withdraw. If you want the app to make no outbound connection at all, do not press the data-fetching buttons, do not open the Exchange rates section and do not open the Overview tab of Mutual Funds or Stocks — the tab shown first in those two sections (section 3). The surest way is to go offline: the app keeps working on the data on your machine.</p>
 
 <h2>11. How your data is protected</h2>
 <p>The most important point, and you should know it plainly: <strong>the database file on your machine is not separately encrypted.</strong> It is protected by your Windows account permissions. If you share the computer, use a separate, password-protected Windows account.</p>
 <ul>
   <li><strong>No password of yours is stored in the app</strong>, because the app has no login.</li>
-  <li><strong>In transit</strong> — the price source calls in section 3 all use HTTPS.</li>
+  <li><strong>In transit</strong> — the price and exchange-rate calls in section 3 all use HTTPS.</li>
   <li><strong>The released installer contains no server credentials</strong>, because there is no server to reach.</li>
 </ul>
 </div>
